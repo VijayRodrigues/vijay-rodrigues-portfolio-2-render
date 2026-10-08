@@ -263,10 +263,23 @@
 
         </p>
 
-        <h1>
+        <h1 class="hero-name-heading">
           <span class="hero-name-line hero-name-vijay">Vijay Ashley</span><br>
           <span class="hero-name-line hero-name-rodrigues">Rodrigues</span>
+          <button class="name-pronunciation" id="namePronunciation" type="button" aria-label="Click to hear my name" title="Click to hear my name">
+            <svg class="name-pronunciation-icon" viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M5 13h5l7-6v18l-7-6H5z"></path>
+              <path class="sound-wave wave-one" d="M21 11c2 2.5 2 7.5 0 10"></path>
+              <path class="sound-wave wave-two" d="M24.5 8c3.8 4 3.8 12 0 16"></path>
+            </svg>
+          </button>
         </h1>
+
+        <audio
+          id="namePronunciationAudio"
+          preload="auto"
+          src="{{ url_for('static', filename='assets/VijayAshleyRodrigues_name_audio_pronunciation.mp3') }}"
+        ></audio>
 
         <p
           class="hero-lede"
@@ -766,33 +779,54 @@
 
         <div class="certification-list">
 
-          <article class="certification-item">
+          <a class="certification-item" href="https://credentials.databricks.com/43e82103-9f0c-4779-b774-e43c88d5f566#acc.350OzjIN" target="_blank" rel="noopener">
             <div class="certification-content">
               <h3>Databricks Certified Data Engineer Associate</h3>
               <p>Databricks · 2025</p>
             </div>
-          </article>
+          </a>
 
-          <article class="certification-item">
+          <a class="certification-item" href="https://credentials.databricks.com/27a4e19e-9865-4a62-ac63-de67115ffd68#acc.ngSDjawR" target="_blank" rel="noopener">
+            <div class="certification-content">
+              <h3>Azure Databricks Platform Architect</h3>
+              <p>Databricks · 2024</p>
+            </div>
+          </a>
+
+          <a class="certification-item" href="https://credentials.databricks.com/4b2e7c63-c28b-4267-bf5d-bd5a97cf208c#acc.K5YdaZTt" target="_blank" rel="noopener">
             <div class="certification-content">
               <h3>Databricks Generative AI Fundamentals</h3>
               <p>Databricks · 2025</p>
             </div>
-          </article>
+          </a>
 
-          <article class="certification-item">
+          <a class="certification-item" href="https://www.credly.com/badges/598caee3-250d-40bf-bc11-c3b3517ffc2e/public_url" target="_blank" rel="noopener">
+            <div class="certification-content">
+              <h3>Astronomer Certification for Apache Airflow Fundamentals</h3>
+              <p>Astronomer · 2024</p>
+            </div>
+          </a>
+
+          <a class="certification-item" href="https://www.credly.com/badges/73f58b62-97ae-42c6-ad2d-3b1e24c91126/public_url" target="_blank" rel="noopener">
+            <div class="certification-content">
+              <h3>Astronomer Certification DAG Authoring for Apache Airflow</h3>
+              <p>Astronomer · 2024</p>
+            </div>
+          </a>
+
+          <a class="certification-item" href="https://credentials.getdbt.com/f7620546-71e8-44dd-a46e-f245caa9beab#acc.Lgl9Je7A" target="_blank" rel="noopener">
             <div class="certification-content">
               <h3>dbt Fundamentals</h3>
               <p>dbt Labs · 2025</p>
             </div>
-          </article>
+          </a>
 
-          <article class="certification-item">
+          <a class="certification-item" href="https://achieve.snowflake.com/profile/vijayashleyrodrigueskinnigoly79898/wallet" target="_blank" rel="noopener">
             <div class="certification-content">
               <h3>Snowflake Data Engineering Essentials</h3>
               <p>Snowflake · 2024</p>
             </div>
-          </article>
+          </a>
 
         </div>
 

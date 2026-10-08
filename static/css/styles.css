@@ -1181,6 +1181,157 @@ html[data-theme='dark'] .contact-link-icon-image img {
 
 
 
+
+/* =========================
+   NAME PRONUNCIATION CONTROL
+   ========================= */
+
+.hero-name-heading {
+  display: block;
+}
+
+.name-pronunciation {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-left: 12px;
+  padding: 0;
+  border: 1px solid var(--text);
+  border-radius: 12px;
+  background: var(--text);
+  color: var(--bg);
+  vertical-align: middle;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
+}
+
+.name-pronunciation:hover,
+.name-pronunciation:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  outline: none;
+}
+
+.name-pronunciation::after {
+  content: attr(title);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translate(-50%, 4px);
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface-strong);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  font: 10px var(--mono);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+  z-index: 20;
+}
+
+.name-pronunciation:hover::after,
+.name-pronunciation:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.name-pronunciation-icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.name-pronunciation-icon > path:first-child {
+  fill: currentColor;
+  stroke: none;
+}
+
+.name-pronunciation .sound-wave {
+  transform-origin: center;
+  opacity: .55;
+}
+
+.name-pronunciation:not(.is-playing) {
+  animation: namePronunciationAttention 2.8s ease-in-out infinite;
+}
+
+.name-pronunciation:not(.is-playing) .wave-one {
+  animation: nameWaveOne 1.8s ease-in-out infinite;
+}
+
+.name-pronunciation:not(.is-playing) .wave-two {
+  animation: nameWaveTwo 1.8s ease-in-out .25s infinite;
+}
+
+.name-pronunciation.is-playing {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.name-pronunciation.is-playing .wave-one {
+  animation: nameWaveOne .65s ease-in-out infinite;
+}
+
+.name-pronunciation.is-playing .wave-two {
+  animation: nameWaveTwo .65s ease-in-out .12s infinite;
+}
+
+@keyframes namePronunciationAttention {
+  0%, 100% {
+    border-color: var(--text);
+    background: var(--text);
+    color: var(--bg);
+  }
+  50% {
+    border-color: #0f766e;
+    background: #0f766e;
+    color: #fff;
+  }
+}
+
+@keyframes nameWaveOne {
+  0%, 100% { opacity: .3; transform: scaleY(.72); }
+  50% { opacity: 1; transform: scaleY(1.08); }
+}
+
+@keyframes nameWaveTwo {
+  0%, 100% { opacity: .25; transform: scaleY(.65); }
+  50% { opacity: .85; transform: scaleY(1.12); }
+}
+
+@media (max-width: 760px) {
+  .name-pronunciation {
+    width: 38px;
+    height: 38px;
+    margin-left: 8px;
+  }
+
+  .name-pronunciation-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name-pronunciation:not(.is-playing),
+.name-pronunciation:not(.is-playing) .sound-wave,
+  .name-pronunciation.is-playing .sound-wave {
+    animation: none;
+  }
+}
+
 /* Continuous opposing motion for the two hero name lines */
 .hero h1 .hero-name-line {
   display: inline-block;
